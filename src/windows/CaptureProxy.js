@@ -1,4 +1,4 @@
-/*
+﻿/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -374,7 +374,7 @@ module.exports = {
                 e.cancelBubble = true;
             };
 
-            cancelButton = document.createElement("span");
+            cancelButton = document.createElement("div");
             cancelButton.className = "recorder-action win-button action-cancel";
             actionBar.appendChild(cancelButton);
 
@@ -411,9 +411,12 @@ module.exports = {
             progressValue.textContent = "";
             actionBar.appendChild(progressValue);
 
-            stopButton = document.createElement("span");
-            stopButton.className = "recorder-action win-button action-stop";
-            actionBar.appendChild(stopButton);
+			stopButton = document.createElement("div");
+			stopButton.className = "recorder-action win-button action-stop";
+			var square = document.createElement("div");
+			square.className = "square";
+			stopButton.appendChild(square);
+			actionBar.appendChild(stopButton);
 
             captureRecorderFrame.appendChild(actionBar);
             options.element.appendChild(captureRecorderFrame);
